@@ -1,0 +1,104 @@
+class BasketballTeam {  
+       
+      private Coach handler;  
+      private int wins;  
+    
+      public BasketballTeam() {  
+          handler = null;  
+          wins = 0;  
+      }  
+    
+      public void activeplayer(int numOfPlayers) {  
+          wins = wins + numOfPlayers;  
+      }  
+    
+      public int getNumberOfPlayers() {  
+          return wins;  
+      }  
+    
+      public String getHandlerName() {  
+          return handler.getName();  
+      }  
+    
+      public void setHandler(Coach coach) {  
+          handler = coach;  
+      }  
+    
+      @Override  
+      public String toString() {  
+          return "Team's Name: " + handler.getTeam() + "\n"  
+                          + " Coach's Name: " + handler.getName() + "\n"  
+                          + " Regular Season Wins: " + wins;  
+      }  
+  } 
+  
+  
+  
+  
+  
+  
+ public class Coach {  
+    
+      private String name;  
+      private String team;  
+    
+      public Coach() {  
+          name = "Unassigned";  
+          team = "Unassigned";  
+      }  
+    
+      public String getTeam() {  
+          return team;  
+      }  
+    
+      public String getName() {  
+          return name;  
+      }  
+    
+      public void setTeam(String teamname) {  
+          team = teamname;  
+      }  
+    
+      public void setName(String coachName) {  
+          name = coachName;  
+      }  
+  } 
+  
+  
+  
+  
+  
+  
+  
+ public class Staff {  
+    
+      public static void main(String[] args) {  
+          Coach coach1, coach2;  
+          BasketballTeam before, after;  
+    
+          coach1 = new Coach();  
+          coach1.setName("Steve Kerr");  
+          coach1.setTeam("Golden State Warriors");  
+                    
+                  coach2 = new Coach();  
+          coach2.setName("Mark Jackson");  
+          coach2.setTeam("Golden State Warriors");  
+    
+          before = new BasketballTeam();  
+          before.setHandler((coach1));  
+          before.activeplayer((434));  
+    
+          after = new BasketballTeam();  
+          after.setHandler((coach2));  
+                  after.activeplayer((121));  
+                    
+                  System.out.println(before.toString());  
+                  System.out.println(" Year: 2015-2023:");  
+                  System.out.println(" Star Players: Curry, Thompson, Green" + "\n");  
+                    
+          System.out.println(after.toString());  
+          System.out.println(" Year: 2012-2014:");  
+                  System.out.println(" Stars: Lee, Curry" + "\n");  
+                    
+      }  
+  }
