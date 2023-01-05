@@ -1,0 +1,100 @@
+public class Main { 
+         public static void main(String [] args){ 
+                 Cars cars; 
+                 Lamborghini lamborghini = new Lamborghini("Aventador.", 1, "V12-powered"); 
+                 Ferrari ferrari = new Ferrari("296 GTB.", 1, "V8 engine"); 
+                  
+                 cars = lamborghini; 
+                 System.out.println(cars.makesound() + " " + "My name is " + cars.getName()); 
+                  
+                 cars = ferrari; 
+                 System.out.println(cars.makesound() + " " + "My name is " + cars.getName()); 
+         } 
+ } 
+  
+  
+  
+
+
+ public abstract class Cars{ 
+         protected String name; 
+         protected double weight; 
+          
+         public Cars (String name, double weight){ 
+                 this.name = name; 
+                 this.weight = weight; 
+         } 
+          
+         public abstract String makesound(); 
+          
+         public String getName(){ 
+                 return name; 
+         } 
+          
+         public void setName (String name){ 
+                 this.name = name; 
+         } 
+          
+         public double getWeight(){ 
+                 return weight; 
+         } 
+          
+         public void setWeight(double weight){ 
+                 this.weight = weight; 
+         } 
+ }
+
+
+
+
+
+Good day sir...mao ni ako duha ka subclass sir..thank you 
+  
+  
+ public class Ferrari extends Cars{ 
+         private String model; 
+          
+         public Ferrari(String name, double weight, String model){ 
+                 super(name, weight); 
+                 this.model = model; 
+         } 
+  
+         @Override 
+         public String makesound() 
+         { 
+                 return "huum! huum!,"; 
+         } 
+          
+         public String getModel(){ 
+                 return model; 
+         } 
+          
+         public void setModel(String model){ 
+                 this.model = model; 
+         } 
+ } 
+  
+  
+  
+ public class Lamborghini extends Cars{ 
+         private String releasedate; 
+  
+         public Lamborghini(String name, double weight, String releasedate){ 
+                 super (name, weight); 
+                 this.releasedate = releasedate; 
+         } 
+  
+         @Override 
+         public String makesound() 
+         { 
+                 return "broob! broob!,"; 
+         } 
+  
+         public String getReleasedate(){ 
+                 return releasedate; 
+         } 
+  
+         public void SetReleasedate(String releasedate){ 
+                 this.releasedate = releasedate; 
+         } 
+ }
